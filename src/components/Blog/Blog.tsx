@@ -8,10 +8,9 @@ const Blog: React.FC = () => (
   <div className="p-4">
     {posts.map((post: BlogPost) => (
       <div key={post.slug} className="mb-4">
-        <Link to={`/blog/${post.slug}`} className="text-blue-500">
+        <Link to={`/blog/${post.slug}`} className="text-black-1000">
           {post.title}
         </Link>
-        <ReactMarkdown className="text-gray-700">{post.content.substring(0, 100) + '...'}</ReactMarkdown>
       </div>
     ))}
   </div>

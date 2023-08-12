@@ -8,7 +8,7 @@ const posts: BlogPost[] = [
   {
     title: "First Blog Post",
     slug: "first-blog-post",
-    content: "# First Blog Post\n\nThis is the content of my first blog post. More details can be found [here](https://example.com)."
+    content: "# First Blog Post\n\n ## This is the content of my first blog post. More details can be found [here](https://example.com)."
   },
   {
     title: "Second Blog Post",

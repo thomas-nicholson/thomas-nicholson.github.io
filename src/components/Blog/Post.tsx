@@ -13,7 +13,7 @@ const Post: React.FC = () => {
       {post ? (
         <>
           <h1 className="text-2xl font-bold">{post.title}</h1>
-          <ReactMarkdown className="text-gray-700">{post.content}</ReactMarkdown>
+          <ReactMarkdown>{post.content}</ReactMarkdown>
         </>
       ) : (
         <p>Post not found</p>
