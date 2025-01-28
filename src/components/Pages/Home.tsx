@@ -1,21 +1,63 @@
+
 import React from 'react';
 
 const Home: React.FC = () => (
-  <div className="container mx-auto p-4 lg:p-8 text-black bg-white">
-    <h1 className="text-3xl lg:text-4xl font-bold mb-6">Thomas Nicholson</h1>
-    <p className="text-gray-700 mb-4">I'm an experienced software developer specialized in full-stack development. I enjoy crafting elegant solutions to complex problems and strive to create intuitive user experiences.</p>
-    <h2 className="text-2xl lg:text-3xl font-semibold mb-4">Education</h2>
-    <p className="text-gray-700 mb-4">[Your University] - B.S. in Computer Science, Graduated in [Year]</p>
-    <h2 className="text-2xl lg:text-3xl font-semibold mb-4">Experience</h2>
-    <p className="text-gray-700 mb-4">[Company Name] - Software Engineer, [Years of Service]</p>
-    <h2 className="text-2xl lg:text-3xl font-semibold mb-4">Skills</h2>
-    <ul className="list-disc pl-5 mb-4">
-      <li className="mb-2">JavaScript & TypeScript</li>
-      <li className="mb-2">React, Vue, Angular</li>
-      <li className="mb-2">Node.js, Express</li>
-      <li className="mb-2">MongoDB, PostgreSQL</li>
-    </ul>
-    {/* You can add more sections like hobbies, interests, or anything else relevant to your profile */}
+  <div className="min-h-screen bg-gradient-to-b from-white to-gray-100">
+    <div className="max-w-4xl mx-auto p-8">
+      <div className="text-center mb-16">
+        <h1 className="text-5xl font-bold text-gray-800 mb-4">Thomas Nicholson</h1>
+        <p className="text-xl text-gray-600">Full-Stack Software Developer</p>
+      </div>
+      
+      <div className="bg-white rounded-lg shadow-lg p-8 mb-8">
+        <h2 className="text-2xl font-bold text-gray-800 mb-4">About Me</h2>
+        <p className="text-gray-600 leading-relaxed">
+          I'm a passionate software developer with expertise in building scalable web applications.
+          My focus is on creating elegant solutions that solve real-world problems while maintaining
+          clean, maintainable code.
+        </p>
+      </div>
+
+      <div className="grid md:grid-cols-2 gap-8">
+        <div className="bg-white rounded-lg shadow-lg p-8">
+          <h2 className="text-2xl font-bold text-gray-800 mb-4">Skills</h2>
+          <div className="grid grid-cols-2 gap-4">
+            <div>
+              <h3 className="font-semibold text-gray-700 mb-2">Frontend</h3>
+              <ul className="text-gray-600 space-y-1">
+                <li>React & TypeScript</li>
+                <li>Next.js</li>
+                <li>Tailwind CSS</li>
+                <li>Redux</li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="font-semibold text-gray-700 mb-2">Backend</h3>
+              <ul className="text-gray-600 space-y-1">
+                <li>Node.js</li>
+                <li>Express</li>
+                <li>PostgreSQL</li>
+                <li>MongoDB</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div className="bg-white rounded-lg shadow-lg p-8">
+          <h2 className="text-2xl font-bold text-gray-800 mb-4">Experience</h2>
+          <div className="space-y-4">
+            <div>
+              <h3 className="font-semibold text-gray-700">Senior Developer</h3>
+              <p className="text-gray-600">TechCorp • 2020 - Present</p>
+            </div>
+            <div>
+              <h3 className="font-semibold text-gray-700">Full-Stack Developer</h3>
+              <p className="text-gray-600">WebSolutions Inc • 2018 - 2020</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 );
 
