@@ -1,10 +1,10 @@
 run = "npm run dev"
-entrypoint = "src/main.tsx"
 
 hidden = [".config", "tsconfig.json", "tsconfig.node.json", "vite.config.ts", ".gitignore"]
+modules = ["nodejs-20", "web", "nix"]
 
 [nix]
-channel = "stable-22_11"
+channel = "stable-24_05"
 
 [env]
 PATH = "/home/runner/$REPL_SLUG/.config/npm/node_global/bin:/home/runner/$REPL_SLUG/node_modules/.bin"
@@ -27,5 +27,8 @@ language = "nodejs"
     start = "typescript-language-server --stdio"
 
 [deployment]
-build = ["sh", "-c", "npm run build"]
-run = ["sh", "-c", "npm run preview"]
+run = ["sh", "-c", "npm run dev"]
+
+[[ports]]
+localPort = 5173
+externalPort = 80
