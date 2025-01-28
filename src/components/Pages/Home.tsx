@@ -84,7 +84,7 @@ const Home: React.FC = () => (
           </div>
           <div className="mt-6 flex justify-center overflow-x-auto">
             <img 
-              src="https://github-contribution-graph.vercel.app/api?username=thomas-nicholson" 
+              src="http://ghchart.rshah.org/thomas-nicholson" 
               alt="GitHub contribution graph"
               className="max-w-full h-auto"
             />
