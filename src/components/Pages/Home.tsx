@@ -82,6 +82,13 @@ const Home: React.FC = () => (
               className="max-w-full h-auto"
             />
           </div>
+          <div className="mt-6 flex justify-center overflow-x-auto">
+            <img 
+              src="https://github-contribution-graph.vercel.app/api?username=thomas-nicholson" 
+              alt="GitHub contribution graph"
+              className="max-w-full h-auto"
+            />
+          </div>
         </div>
       </div>
     </div>
