@@ -61,19 +61,19 @@ const Home: React.FC = () => (
           <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">GitHub Activity</h2>
           <div className="grid md:grid-cols-2 gap-6">
             <img 
-              src="https://github-readme-stats.vercel.app/api?username=thomasnicholson&show_icons=true&theme=transparent" 
+              src="https://github-readme-stats.vercel.app/api?username=thomas-nicholson&show_icons=true&theme=transparent" 
               alt="GitHub stats"
               className="w-full"
             />
             <img 
-              src="https://github-readme-streak-stats.herokuapp.com/?user=thomasnicholson&theme=transparent" 
+              src="https://github-readme-streak-stats.herokuapp.com/?user=thomas-nicholson&theme=transparent" 
               alt="GitHub streak stats"
               className="w-full"
             />
           </div>
           <div className="mt-6">
             <img 
-              src="https://github-readme-stats.vercel.app/api/top-langs/?username=thomasnicholson&layout=compact&theme=transparent" 
+              src="https://github-readme-stats.vercel.app/api/top-langs/?username=thomas-nicholson&layout=compact&theme=transparent" 
               alt="Most used languages"
               className="max-w-md mx-auto"
             />
