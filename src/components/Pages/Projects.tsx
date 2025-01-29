@@ -15,8 +15,8 @@ const Projects: React.FC = () => {
     {
       title: "Money Talks",
       description:
-        "A real-time task management application with team collaboration features.",
-      image: "https://images.unsplash.com/photo-1661956600684-97d3a4320e45",
+        "A platform where users can put their money where their mouth is. Create bets on your opinions and see who comes out on top",
+      image: "/src/assets/money-talks.png",
       tech: ["TypeScript", "Next.js", "PostgreSQL", "Socket.io"],
       github: "https://github.com/thomas-nicholson/money-talks-lol",
       demo: "https://demo-tasks.com",
