@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Link } from "react-router-dom";
 
@@ -29,6 +30,23 @@ const Projects: React.FC = () => {
       tech: ["Python", "TensorFlow", "React", "FastAPI"],
       github: "https://github.com/username/aichat",
       demo: "https://demo-chat.com",
+    },
+  ];
+
+  const archivedProjects = [
+    {
+      title: "Trail Mapping System",
+      description: "A GPS-based mapping system for hiking trails and outdoor activities.",
+      image: "https://images.unsplash.com/photo-1551632811-561732d1e306",
+      tech: ["Python", "Django", "Leaflet.js", "PostgreSQL"],
+      year: "2019",
+    },
+    {
+      title: "Campsite Finder",
+      description: "Mobile-friendly web app for finding and reviewing campsites.",
+      image: "https://images.unsplash.com/photo-1504280390367-361c6d9f38f4",
+      tech: ["React", "Node.js", "MongoDB"],
+      year: "2018",
     },
   ];
 
@@ -101,6 +119,43 @@ const Projects: React.FC = () => {
                   >
                     Read More
                   </Link>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <h2 className="text-3xl font-bold text-gray-800 mb-8 mt-16 text-center">
+          Archived Projects
+        </h2>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {archivedProjects.map((project, index) => (
+            <div
+              key={index}
+              className="bg-white rounded-lg shadow-lg overflow-hidden"
+            >
+              <img
+                src={project.image}
+                alt={project.title}
+                className="w-full h-48 object-cover"
+              />
+              <div className="p-6">
+                <div className="flex justify-between items-center mb-2">
+                  <h2 className="text-2xl font-bold text-gray-800">
+                    {project.title}
+                  </h2>
+                  <span className="text-sm text-gray-500">{project.year}</span>
+                </div>
+                <p className="text-gray-600 mb-4">{project.description}</p>
+                <div className="flex flex-wrap gap-2">
+                  {project.tech.map((tech, i) => (
+                    <span
+                      key={i}
+                      className="px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-sm"
+                    >
+                      {tech}
+                    </span>
+                  ))}
                 </div>
               </div>
             </div>
