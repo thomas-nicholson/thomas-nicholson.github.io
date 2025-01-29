@@ -44,18 +44,20 @@ const Projects: React.FC = () => {
               key={index}
               className="bg-white rounded-lg shadow-lg overflow-hidden relative"
             >
-              <img
-                src={project.image}
-                alt={project.title}
-                className="w-full h-48 object-cover"
-              />
-              {index === 1 && (
-                <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-                  <span className="text-white text-xl font-bold transform -rotate-12">
-                    Under Construction
-                  </span>
-                </div>
-              )}
+              <div className="relative">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-48 object-cover"
+                />
+                {index === 1 && (
+                  <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+                    <span className="text-white text-xl font-bold transform -rotate-12">
+                      Under Construction
+                    </span>
+                  </div>
+                )}
+              </div>
               <div className="p-6">
                 <h2 className="text-2xl font-bold text-gray-800 mb-2">
                   {project.title}
