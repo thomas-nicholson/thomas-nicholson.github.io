@@ -9,12 +9,12 @@ const Post: React.FC = () => {
   const post = posts.find((p) => p.slug === slug);
 
   return (
-    <div className="p-4">
+    <div className="max-w-4xl mx-auto p-8">
       {post ? (
-        <>
-          <h1 className="text-2xl font-bold">{post.title}</h1>
-          <ReactMarkdown>{post.content}</ReactMarkdown>
-        </>
+        <div className="prose prose-lg">
+          <h1 className="text-4xl font-bold mb-8">{post.title}</h1>
+          <ReactMarkdown className="prose prose-headings:font-bold prose-a:text-blue-600">{post.content}</ReactMarkdown>
+        </div>
       ) : (
         <p>Post not found</p>
       )}
