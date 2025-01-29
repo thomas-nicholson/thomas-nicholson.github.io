@@ -71,6 +71,12 @@ const Projects: React.FC = () => {
                   >
                     Live Demo
                   </a>
+                  <Link 
+                    to={`/blog/${project.title.toLowerCase().replace(/\s+/g, '-')}-project`}
+                    className="text-blue-600 hover:text-blue-800"
+                  >
+                    Read More
+                  </Link>
                 </div>
               </div>
             </div>
