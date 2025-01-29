@@ -6,7 +6,7 @@ const Projects: React.FC = () => {
     {
       title: 'E-commerce Platform',
       description: 'A full-stack e-commerce solution built with React, Node.js, and MongoDB.',
-      image: 'https://images.unsplash.com/photo-1661956601349-f61c959a8fd4',
+      image: '/src/assets/deja-do.png',
       tech: ['React', 'Node.js', 'MongoDB', 'Redux'],
       github: 'https://github.com/username/ecommerce',
       demo: 'https://demo-ecommerce.com'
