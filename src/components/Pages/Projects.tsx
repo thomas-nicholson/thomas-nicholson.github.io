@@ -4,19 +4,19 @@ import React from 'react';
 const Projects: React.FC = () => {
   const projects = [
     {
-      title: 'E-commerce Platform',
-      description: 'A full-stack e-commerce solution built with React, Node.js, and MongoDB.',
+      title: 'Deja Do',
+      description: 'A simple to-do list app where the lists reset hourly or daily.',
       image: '/src/assets/deja-do.png',
-      tech: ['React', 'Node.js', 'MongoDB', 'Redux'],
-      github: 'https://github.com/username/ecommerce',
-      demo: 'https://demo-ecommerce.com'
+      tech: ['React', 'Typescript', 'Tailwind'],
+      github: 'https://github.com/thomas-nicholson/deja-do',
+      demo: 'https://deja-do-tnicholson3701.replit.app/'
     },
     {
-      title: 'Task Management App',
+      title: 'Money Talks',
       description: 'A real-time task management application with team collaboration features.',
       image: 'https://images.unsplash.com/photo-1661956600684-97d3a4320e45',
       tech: ['TypeScript', 'Next.js', 'PostgreSQL', 'Socket.io'],
-      github: 'https://github.com/username/taskmanager',
+      github: 'https://github.com/thomas-nicholson/money-talks-lol',
       demo: 'https://demo-tasks.com'
     },
     {
