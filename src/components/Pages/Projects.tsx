@@ -81,12 +81,12 @@ const Projects: React.FC = () => {
                   >
                     Live Demo
                   </a>
-                  <a
-                    href={`/blog/${project.title.toLowerCase().replace(/\s+/g, "-")}-project`}
+                  <Link
+                    to={`/blog/${project.title.toLowerCase().replace(/\s+/g, "-")}-project`}
                     className="text-blue-600 hover:text-blue-800"
                   >
                     Read More
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
