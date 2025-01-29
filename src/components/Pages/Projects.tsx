@@ -42,13 +42,20 @@ const Projects: React.FC = () => {
           {projects.map((project, index) => (
             <div
               key={index}
-              className="bg-white rounded-lg shadow-lg overflow-hidden"
+              className="bg-white rounded-lg shadow-lg overflow-hidden relative"
             >
               <img
                 src={project.image}
                 alt={project.title}
                 className="w-full h-48 object-cover"
               />
+              {index === 1 && (
+                <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+                  <span className="text-white text-xl font-bold transform -rotate-12">
+                    Under Construction
+                  </span>
+                </div>
+              )}
               <div className="p-6">
                 <h2 className="text-2xl font-bold text-gray-800 mb-2">
                   {project.title}
@@ -74,10 +81,15 @@ const Projects: React.FC = () => {
                     GitHub
                   </a>
                   <a
-                    href={project.demo}
-                    className="text-blue-600 hover:text-blue-800"
+                    href={index === 1 ? "#" : project.demo}
+                    className={`${
+                      index === 1
+                        ? "text-gray-400 cursor-not-allowed"
+                        : "text-blue-600 hover:text-blue-800"
+                    }`}
                     target="_blank"
                     rel="noopener noreferrer"
+                    onClick={(e) => index === 1 && e.preventDefault()}
                   >
                     Live Demo
                   </a>
