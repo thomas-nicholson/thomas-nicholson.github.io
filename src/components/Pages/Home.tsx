@@ -65,6 +65,7 @@ const Home: React.FC = () => (
             <div>
               <h3 className="font-semibold text-gray-700 mb-2">Frontend</h3>
               <ul className="text-gray-600 space-y-1">
+                <li>JavaScript</li>
                 <li>React & TypeScript</li>
                 <li>Next.js</li>
                 <li>Tailwind CSS</li>
@@ -78,6 +79,8 @@ const Home: React.FC = () => (
                 <li>Express</li>
                 <li>PostgreSQL</li>
                 <li>MongoDB</li>
+                <li>Java</li>
+                <li>AWS</li>
               </ul>
             </div>
           </div>
@@ -87,14 +90,10 @@ const Home: React.FC = () => (
           <h2 className="text-2xl font-bold text-gray-800 mb-4">Experience</h2>
           <div className="space-y-4">
             <div>
-              <h3 className="font-semibold text-gray-700">Senior Developer</h3>
-              <p className="text-gray-600">TechCorp • 2020 - Present</p>
-            </div>
-            <div>
               <h3 className="font-semibold text-gray-700">
-                Full-Stack Developer
+                Platform Engineer - Consultant
               </h3>
-              <p className="text-gray-600">WebSolutions Inc • 2018 - 2020</p>
+              <p className="text-gray-600">Deloitte • 2021 - present</p>
             </div>
           </div>
         </div>
