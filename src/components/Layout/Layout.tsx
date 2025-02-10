@@ -23,7 +23,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
           </div>
         </div>
         <div className="fixed bottom-0 left-0 right-0 bg-white border-t lg:hidden z-50">
-          <div className="flex h-16">
+          <div className="flex p-3">
             <Link to="/" className="flex-1 flex items-center justify-center text-gray-700 hover:text-gray-900 hover:bg-gray-100">
               <FontAwesomeIcon icon={faHome} size="lg" />
             </Link>
