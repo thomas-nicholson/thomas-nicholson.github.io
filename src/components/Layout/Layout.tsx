@@ -23,101 +23,17 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
           </div>
         </div>
         <div className="fixed bottom-0 left-0 right-0 bg-white border-t lg:hidden z-50">
-          <div className="flex justify-around p-3">
-            <Link 
-              to="/" 
-              className="text-gray-700 hover:text-gray-900"
-              onClick={async () => {
-                if ('vibrate' in navigator) {
-                  try {
-                    // Request permission through a user gesture
-                    if ('permissions' in navigator) {
-                      const result = await navigator.permissions.query({ name: 'vibrate' as PermissionName });
-                      if (result.state === 'granted') {
-                        navigator.vibrate(50);
-                      }
-                    } else {
-                      // Fallback for browsers that don't support the Permissions API
-                      navigator.vibrate(50);
-                    }
-                  } catch (error) {
-                    console.log('Vibration not supported');
-                  }
-                }
-              }}
-            >
+          <div className="flex h-16">
+            <Link to="/" className="flex-1 flex items-center justify-center text-gray-700 hover:text-gray-900 hover:bg-gray-100">
               <FontAwesomeIcon icon={faHome} size="lg" />
             </Link>
-            <Link 
-              to="/projects" 
-              className="text-gray-700 hover:text-gray-900"
-              onClick={async () => {
-                if ('vibrate' in navigator) {
-                  try {
-                    // Request permission through a user gesture
-                    if ('permissions' in navigator) {
-                      const result = await navigator.permissions.query({ name: 'vibrate' as PermissionName });
-                      if (result.state === 'granted') {
-                        navigator.vibrate(50);
-                      }
-                    } else {
-                      // Fallback for browsers that don't support the Permissions API
-                      navigator.vibrate(50);
-                    }
-                  } catch (error) {
-                    console.log('Vibration not supported');
-                  }
-                }
-              }}
-            >
+            <Link to="/projects" className="flex-1 flex items-center justify-center text-gray-700 hover:text-gray-900 hover:bg-gray-100">
               <FontAwesomeIcon icon={faLaptopCode} size="lg" />
             </Link>
-            <Link 
-              to="/blog" 
-              className="text-gray-700 hover:text-gray-900"
-              onClick={async () => {
-                if ('vibrate' in navigator) {
-                  try {
-                    // Request permission through a user gesture
-                    if ('permissions' in navigator) {
-                      const result = await navigator.permissions.query({ name: 'vibrate' as PermissionName });
-                      if (result.state === 'granted') {
-                        navigator.vibrate(50);
-                      }
-                    } else {
-                      // Fallback for browsers that don't support the Permissions API
-                      navigator.vibrate(50);
-                    }
-                  } catch (error) {
-                    console.log('Vibration not supported');
-                  }
-                }
-              }}
-            >
+            <Link to="/blog" className="flex-1 flex items-center justify-center text-gray-700 hover:text-gray-900 hover:bg-gray-100">
               <FontAwesomeIcon icon={faBook} size="lg" />
             </Link>
-            <Link 
-              to="/contact" 
-              className="text-gray-700 hover:text-gray-900"
-              onClick={async () => {
-                if ('vibrate' in navigator) {
-                  try {
-                    // Request permission through a user gesture
-                    if ('permissions' in navigator) {
-                      const result = await navigator.permissions.query({ name: 'vibrate' as PermissionName });
-                      if (result.state === 'granted') {
-                        navigator.vibrate(50);
-                      }
-                    } else {
-                      // Fallback for browsers that don't support the Permissions API
-                      navigator.vibrate(50);
-                    }
-                  } catch (error) {
-                    console.log('Vibration not supported');
-                  }
-                }
-              }}
-            >
+            <Link to="/contact" className="flex-1 flex items-center justify-center text-gray-700 hover:text-gray-900 hover:bg-gray-100">
               <FontAwesomeIcon icon={faEnvelope} size="lg" />
             </Link>
           </div>
