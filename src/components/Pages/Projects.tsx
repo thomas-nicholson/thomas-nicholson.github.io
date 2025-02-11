@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 const Projects: React.FC = () => {
-  const projects = [
+  const initialProjects = [
     {
       title: "Deja Do",
       description:
@@ -49,6 +49,30 @@ const Projects: React.FC = () => {
     },
   ];
 
+  const [projects, setProjects] = useState(initialProjects);
+
+  const handleDragStart = (e: React.DragEvent<HTMLDivElement>, project: any) => {
+    e.dataTransfer.setData("text/plain", project.title);
+  };
+
+  const handleDragOver = (e: React.DragEvent<HTMLDivElement>) => {
+    e.preventDefault();
+    e.dataTransfer.dropEffect = "move";
+  };
+
+  const handleDrop = (e: React.DragEvent<HTMLDivElement>) => {
+    e.preventDefault();
+    const draggedProjectTitle = e.dataTransfer.getData("text/plain");
+    const draggedProjectIndex = projects.findIndex(
+      (project) => project.title === draggedProjectTitle
+    );
+    const newProjects = [...projects];
+    const [draggedProject] = newProjects.splice(draggedProjectIndex, 1);
+    newProjects.splice(e.currentTarget.dataset.index,0, draggedProject);
+    setProjects(newProjects);
+  };
+
+
   return (
     <div className="min-h-screen py-12">
       <div className="max-w-6xl mx-auto px-4">
@@ -57,21 +81,17 @@ const Projects: React.FC = () => {
         </h1>
         <div
           className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
-          onDragOver={(e) => {
-            e.preventDefault();
-            e.dataTransfer.dropEffect = "move";
-          }}
-          onDrop={(e) => {
-            e.preventDefault();
-            const title = e.dataTransfer.getData("text/plain");
-            console.log(`Dropped project: ${title}`);
-            // You can add additional functionality here like reordering projects
-          }}
+          
         >
           {projects.map((project, index) => (
             <div
               key={index}
               className="bg-white rounded-lg shadow-lg overflow-hidden relative"
+              draggable
+              onDragStart={(e) => handleDragStart(e, project)}
+              onDragOver={handleDragOver}
+              onDrop={handleDrop}
+              data-index={index}
             >
               <div className="relative">
                 <img
