@@ -50,14 +50,22 @@ const Projects: React.FC = () => {
   ];
 
   const [projects, setProjects] = useState(initialProjects);
+  const [isDragging, setIsDragging] = useState(false);
 
   const handleDragStart = (e: React.DragEvent<HTMLDivElement>, project: any) => {
+    setIsDragging(true);
     e.dataTransfer.setData("text/plain", project.title);
+    e.currentTarget.style.opacity = "0.4";
   };
 
   const handleDragOver = (e: React.DragEvent<HTMLDivElement>) => {
     e.preventDefault();
     e.dataTransfer.dropEffect = "move";
+  };
+
+  const handleDragEnd = (e: React.DragEvent<HTMLDivElement>) => {
+    setIsDragging(false);
+    e.currentTarget.style.opacity = "1";
   };
 
   const handleDrop = (e: React.DragEvent<HTMLDivElement>) => {
@@ -86,14 +94,27 @@ const Projects: React.FC = () => {
           {projects.map((project, index) => (
             <div
               key={index}
-              className="bg-white rounded-lg shadow-lg overflow-hidden relative"
+              className="bg-white rounded-lg shadow-lg overflow-hidden relative group cursor-grab active:cursor-grabbing"
               draggable
               onDragStart={(e) => handleDragStart(e, project)}
               onDragOver={handleDragOver}
               onDrop={handleDrop}
+              onDragEnd={handleDragEnd}
               data-index={index}
             >
-              <div className="relative">
+              <div className="absolute right-2 top-2 w-6 h-8 flex flex-col gap-1 opacity-50 group-hover:opacity-100 transition-opacity pointer-events-none">
+                <div className="h-0.5 w-full bg-gray-400 rounded"></div>
+                <div className="h-0.5 w-full bg-gray-400 rounded"></div>
+                <div className="h-0.5 w-full bg-gray-400 rounded"></div>
+              </div>
+              <div 
+                className="relative transition-transform duration-200 ease-in-out"
+                style={{
+                  transform: `scale(${isDragging ? '1.02' : '1'})`,
+                  opacity: isDragging ? '0.8' : '1',
+                  boxShadow: isDragging ? '0 20px 25px -5px rgb(0 0 0 / 0.1)' : 'none'
+                }}
+              >
                 <img
                   src={project.image}
                   alt={project.title}
