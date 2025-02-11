@@ -102,11 +102,6 @@ const Projects: React.FC = () => {
               onDragEnd={handleDragEnd}
               data-index={index}
             >
-              <div className="absolute right-2 top-2 w-6 h-8 flex flex-col gap-1 opacity-50 group-hover:opacity-100 transition-opacity pointer-events-none">
-                <div className="h-0.5 w-full bg-gray-400 rounded"></div>
-                <div className="h-0.5 w-full bg-gray-400 rounded"></div>
-                <div className="h-0.5 w-full bg-gray-400 rounded"></div>
-              </div>
               <div 
                 className="relative transition-transform duration-200 ease-in-out"
                 style={{
@@ -120,6 +115,10 @@ const Projects: React.FC = () => {
                   alt={project.title}
                   className="w-full h-48 object-cover"
                 />
+                <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2 w-8 h-6 flex flex-col gap-1 bg-white rounded-full shadow-md opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none p-1">
+                  <div className="h-0.5 w-full bg-gray-400 rounded"></div>
+                  <div className="h-0.5 w-full bg-gray-400 rounded"></div>
+                </div>
                 {index === 1 && (
                   <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
                     <span className="text-white text-xl font-bold transform -rotate-12">
