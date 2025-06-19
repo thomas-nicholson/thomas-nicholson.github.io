@@ -193,11 +193,18 @@ const Projects: React.FC = () => {
               key={index}
               className="bg-white rounded-lg shadow-lg overflow-hidden"
             >
-              <img
-                src={project.image}
-                alt={project.title}
-                className="w-full h-48 object-cover"
-              />
+              <div className="relative">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-48 object-cover"
+                />
+                <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+                  <span className="text-white text-xl font-bold transform -rotate-12">
+                    Placeholder
+                  </span>
+                </div>
+              </div>
               <div className="p-6">
                 <div className="flex justify-between items-center mb-2">
                   <h2 className="text-2xl font-bold text-gray-800">
