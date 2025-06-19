@@ -127,6 +127,13 @@ const Projects: React.FC = () => {
                     </span>
                   </div>
                 )}
+                {index !== 0 && index !== 1 && (
+                  <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+                    <span className="text-white text-xl font-bold transform -rotate-12">
+                      Placeholder
+                    </span>
+                  </div>
+                )}
               </div>
               <div className="p-6">
                 <h2 className="text-2xl font-bold text-gray-800 mb-2">
@@ -153,15 +160,15 @@ const Projects: React.FC = () => {
                     GitHub
                   </a>
                   <a
-                    href={index === 1 ? "#" : project.demo}
+                    href={index === 0 ? project.demo : "#"}
                     className={`${
-                      index === 1
-                        ? "text-gray-400 cursor-not-allowed"
-                        : "text-blue-600 hover:text-blue-800"
+                      index === 0
+                        ? "text-blue-600 hover:text-blue-800"
+                        : "text-gray-400 cursor-not-allowed"
                     }`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    onClick={(e) => index === 1 && e.preventDefault()}
+                    onClick={(e) => index !== 0 && e.preventDefault()}
                   >
                     Live Demo
                   </a>
