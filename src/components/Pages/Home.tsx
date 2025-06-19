@@ -41,13 +41,13 @@ const Home: React.FC = () => (
               />
             </div>
           </div>
-          <div className="mt-6 flex justify-center">
+          {/* <div className="mt-6 flex justify-center">
             <img
               src="https://github-readme-stats.vercel.app/api/top-langs/?username=thomas-nicholson&layout=compact&theme=transparent"
               alt="Most used languages"
               className="max-w-full h-auto"
             />
-          </div>
+          </div> */}
           <div className="mt-6 flex justify-center overflow-x-auto">
             <img
               src="https://ghchart.rshah.org/thomas-nicholson"
