@@ -7,7 +7,7 @@ const Projects: React.FC = () => {
       title: "Deja Do",
       description:
         "A simple to-do list app where the lists reset hourly or daily.",
-      image: "/src/assets/deja-do.png",
+      image: "/deja-do.png",
       tech: ["React", "Typescript", "Tailwind"],
       github: "https://github.com/thomas-nicholson/deja-do",
       demo: "https://deja-do-tnicholson3701.replit.app/",
@@ -16,7 +16,7 @@ const Projects: React.FC = () => {
       title: "Money Talks",
       description:
         "A platform where users can put their money where their mouth is. Create bets on your opinions and see who comes out on top",
-      image: "/src/assets/money-talks.png",
+      image: "/money-talks.png",
       tech: ["TypeScript", "Next.js", "PostgreSQL", "Socket.io"],
       github: "https://github.com/thomas-nicholson/money-talks-lol",
       demo: "https://demo-tasks.com",
