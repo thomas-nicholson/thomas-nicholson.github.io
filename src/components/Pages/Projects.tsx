@@ -49,7 +49,7 @@ const Projects: React.FC = () => {
     },
   ];
 
-  const [projects, setProjects] = useState(initialProjects);
+  const [projects] = useState(initialProjects);
   // const [isDragging, setIsDragging] = useState(false);
 
   // const handleDragStart = (e: React.DragEvent<HTMLDivElement>, project: any) => {

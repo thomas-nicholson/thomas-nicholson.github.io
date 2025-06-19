@@ -9,8 +9,6 @@ interface LayoutProps {
 }
 
 const Layout: React.FC<LayoutProps> = ({ children }) => {
-  const [menuOpen, setMenuOpen] = useState(false);
-
   return (
     <div className="container mx-auto text-black bg-white">
       <nav className="flex flex-wrap justify-between p-4">
