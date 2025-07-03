@@ -13,7 +13,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
   const [theme, toggleTheme] = useTheme();
 
   return (
-    <div className="container mx-auto min-h-screen text-gray-800 bg-white dark:bg-gray-900 dark:text-gray-100">
+    <div className="container mx-auto min-h-screen text-gray-800 dark:text-gray-100">
       <nav className="flex flex-wrap justify-between p-4">
         <div className="hidden lg:flex lg:items-center lg:w-auto">
           <div className="text-sm lg:flex-grow">
