@@ -30,6 +30,7 @@ const Home: React.FC = () => (
               <img
                 src="https://github-readme-stats.vercel.app/api?username=thomas-nicholson&show_icons=true&theme=transparent"
                 alt="GitHub stats"
+                loading="lazy"
                 className="max-w-full h-auto"
               />
             </div>
@@ -37,6 +38,7 @@ const Home: React.FC = () => (
               <img
                 src="https://github-readme-streak-stats.herokuapp.com/?user=thomas-nicholson&theme=transparent"
                 alt="GitHub streak stats"
+                loading="lazy"
                 className="max-w-full h-auto"
               />
             </div>
@@ -52,6 +54,7 @@ const Home: React.FC = () => (
             <img
               src="https://ghchart.rshah.org/thomas-nicholson"
               alt="GitHub contribution graph"
+              loading="lazy"
               className="max-w-full h-auto"
             />
           </div>
