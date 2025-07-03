@@ -93,7 +93,7 @@ const Projects: React.FC = () => {
         >
           {projects.map((project, index) => (
             <div
-              key={index}
+              key={project.title}
               className="bg-white rounded-lg shadow-lg overflow-hidden relative group"
               // draggable
               // onDragStart={(e) => handleDragStart(e, project)}
@@ -188,9 +188,9 @@ const Projects: React.FC = () => {
           Archived Projects
         </h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {archivedProjects.map((project, index) => (
+          {archivedProjects.map((project) => (
             <div
-              key={index}
+              key={project.title}
               className="bg-white rounded-lg shadow-lg overflow-hidden"
             >
               <div className="relative">
