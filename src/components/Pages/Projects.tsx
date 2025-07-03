@@ -50,6 +50,21 @@ const Projects: React.FC = () => {
   ];
 
   const [projects] = useState(initialProjects);
+  const [selectedTech, setSelectedTech] = useState<string[]>([]);
+
+  const allTech = Array.from(new Set(initialProjects.flatMap((p) => p.tech)));
+
+  const handleTechChange = (tech: string) => {
+    setSelectedTech((prev) =>
+      prev.includes(tech) ? prev.filter((t) => t !== tech) : [...prev, tech]
+    );
+  };
+
+  const filteredProjects = projects.filter(
+    (project) =>
+      selectedTech.length === 0 ||
+      selectedTech.every((tech) => project.tech.includes(tech))
+  );
   // const [isDragging, setIsDragging] = useState(false);
 
   // const handleDragStart = (e: React.DragEvent<HTMLDivElement>, project: any) => {
@@ -82,19 +97,30 @@ const Projects: React.FC = () => {
 
 
   return (
-    <div className="min-h-screen py-12">
+    <div className="min-h-screen py-12 dark:bg-gray-900 dark:text-gray-100">
       <div className="max-w-6xl mx-auto px-4">
-        <h1 className="text-4xl font-bold text-gray-800 mb-8 text-center">
+        <h1 className="text-4xl font-bold text-gray-800 dark:text-gray-100 mb-8 text-center">
           Projects
         </h1>
-        <div
-          className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
-          
-        >
-          {projects.map((project, index) => (
+        <div className="mb-6">
+          <span className="font-semibold mr-2">Filter by tech:</span>
+          {allTech.map((tech) => (
+            <label key={tech} className="mr-4">
+              <input
+                type="checkbox"
+                className="mr-1"
+                checked={selectedTech.includes(tech)}
+                onChange={() => handleTechChange(tech)}
+              />
+              {tech}
+            </label>
+          ))}
+        </div>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {filteredProjects.map((project, index) => (
             <div
               key={project.title}
-              className="bg-white rounded-lg shadow-lg overflow-hidden relative group"
+              className="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden relative group"
               // draggable
               // onDragStart={(e) => handleDragStart(e, project)}
               // onDragOver={handleDragOver}
@@ -136,7 +162,7 @@ const Projects: React.FC = () => {
                 )}
               </div>
               <div className="p-6">
-                <h2 className="text-2xl font-bold text-gray-800 mb-2">
+                <h2 className="text-2xl font-bold text-gray-800 dark:text-gray-100 mb-2">
                   {project.title}
                 </h2>
                 <p className="text-gray-600 mb-4">{project.description}</p>
@@ -184,14 +210,14 @@ const Projects: React.FC = () => {
           ))}
         </div>
 
-        <h2 className="text-3xl font-bold text-gray-800 mb-8 mt-16 text-center">
+        <h2 className="text-3xl font-bold text-gray-800 dark:text-gray-100 mb-8 mt-16 text-center">
           Archived Projects
         </h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {archivedProjects.map((project) => (
             <div
               key={project.title}
-              className="bg-white rounded-lg shadow-lg overflow-hidden"
+              className="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden"
             >
               <div className="relative">
                 <img
@@ -207,7 +233,7 @@ const Projects: React.FC = () => {
               </div>
               <div className="p-6">
                 <div className="flex justify-between items-center mb-2">
-                  <h2 className="text-2xl font-bold text-gray-800">
+                  <h2 className="text-2xl font-bold text-gray-800 dark:text-gray-100">
                     {project.title}
                   </h2>
                   <span className="text-sm text-gray-500">{project.year}</span>
