@@ -7,13 +7,13 @@ const Home: React.FC = () => (
         <h1 className="text-5xl font-bold text-gray-800 dark:text-gray-100 mb-4">
           Thomas Nicholson
         </h1>
-        <p className="text-xl text-gray-600">Full-Stack Software Engineer</p>
+        <p className="text-xl text-gray-600 dark:text-gray-300">Full-Stack Software Engineer</p>
       </div>
 
       <div className="space-y-8 mb-8">
         <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8">
           <h2 className="text-2xl font-bold text-gray-800 dark:text-gray-100 mb-4">About Me</h2>
-          <p className="text-gray-600 leading-relaxed">
+          <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
             I'm a passionate software developer with expertise in building
             scalable web applications. My focus is on creating elegant solutions
             that solve real-world problems while maintaining clean, maintainable
@@ -67,7 +67,7 @@ const Home: React.FC = () => (
           <div className="grid grid-cols-2 gap-4">
             <div>
               <h3 className="font-semibold text-gray-700 mb-2">Frontend</h3>
-              <ul className="text-gray-600 space-y-1">
+              <ul className="text-gray-600 dark:text-gray-300 space-y-1">
                 <li>JavaScript</li>
                 <li>React & TypeScript</li>
                 <li>Next.js</li>
@@ -77,7 +77,7 @@ const Home: React.FC = () => (
             </div>
             <div>
               <h3 className="font-semibold text-gray-700 mb-2">Backend</h3>
-              <ul className="text-gray-600 space-y-1">
+              <ul className="text-gray-600 dark:text-gray-300 space-y-1">
                 <li>Node.js</li>
                 <li>Express</li>
                 <li>PostgreSQL</li>
@@ -96,7 +96,7 @@ const Home: React.FC = () => (
               <h3 className="font-semibold text-gray-700">
                 Platform Engineer - Consultant
               </h3>
-              <p className="text-gray-600">Deloitte • 2021 - present</p>
+              <p className="text-gray-600 dark:text-gray-300">Deloitte • 2021 - present</p>
             </div>
           </div>
         </div>

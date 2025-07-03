@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 
 const Projects: React.FC = () => {
@@ -49,22 +49,7 @@ const Projects: React.FC = () => {
     },
   ];
 
-  const [projects] = useState(initialProjects);
-  const [selectedTech, setSelectedTech] = useState<string[]>([]);
-
-  const allTech = Array.from(new Set(initialProjects.flatMap((p) => p.tech)));
-
-  const handleTechChange = (tech: string) => {
-    setSelectedTech((prev) =>
-      prev.includes(tech) ? prev.filter((t) => t !== tech) : [...prev, tech]
-    );
-  };
-
-  const filteredProjects = projects.filter(
-    (project) =>
-      selectedTech.length === 0 ||
-      selectedTech.every((tech) => project.tech.includes(tech))
-  );
+  const projects = initialProjects;
   // const [isDragging, setIsDragging] = useState(false);
 
   // const handleDragStart = (e: React.DragEvent<HTMLDivElement>, project: any) => {
@@ -102,22 +87,8 @@ const Projects: React.FC = () => {
         <h1 className="text-4xl font-bold text-gray-800 dark:text-gray-100 mb-8 text-center">
           Projects
         </h1>
-        <div className="mb-6">
-          <span className="font-semibold mr-2">Filter by tech:</span>
-          {allTech.map((tech) => (
-            <label key={tech} className="mr-4">
-              <input
-                type="checkbox"
-                className="mr-1"
-                checked={selectedTech.includes(tech)}
-                onChange={() => handleTechChange(tech)}
-              />
-              {tech}
-            </label>
-          ))}
-        </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredProjects.map((project, index) => (
+          {projects.map((project, index) => (
             <div
               key={project.title}
               className="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden relative group"
@@ -165,12 +136,12 @@ const Projects: React.FC = () => {
                 <h2 className="text-2xl font-bold text-gray-800 dark:text-gray-100 mb-2">
                   {project.title}
                 </h2>
-                <p className="text-gray-600 mb-4">{project.description}</p>
+                <p className="text-gray-600 dark:text-gray-300 mb-4">{project.description}</p>
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.tech.map((tech, i) => (
                     <span
                       key={i}
-                      className="px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-sm"
+                      className="px-3 py-1 bg-gray-100 text-gray-600 dark:text-gray-300 rounded-full text-sm"
                     >
                       {tech}
                     </span>
@@ -238,12 +209,12 @@ const Projects: React.FC = () => {
                   </h2>
                   <span className="text-sm text-gray-500">{project.year}</span>
                 </div>
-                <p className="text-gray-600 mb-4">{project.description}</p>
+                <p className="text-gray-600 dark:text-gray-300 mb-4">{project.description}</p>
                 <div className="flex flex-wrap gap-2">
                   {project.tech.map((tech, i) => (
                     <span
                       key={i}
-                      className="px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-sm"
+                      className="px-3 py-1 bg-gray-100 text-gray-600 dark:text-gray-300 rounded-full text-sm"
                     >
                       {tech}
                     </span>
