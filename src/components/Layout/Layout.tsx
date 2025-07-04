@@ -30,18 +30,30 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         >
           {theme === 'dark' ? 'Light' : 'Dark'} Mode
         </button>
-        <div className="fixed bottom-0 left-0 right-0 bg-white border-t lg:hidden z-50">
+        <div className="fixed bottom-0 left-0 right-0 bg-white dark:bg-gray-800 border-t dark:border-gray-700 lg:hidden z-50">
           <div className="flex h-full">
-            <Link to="/" className="flex-1 flex items-center justify-center py-3 text-gray-700 hover:text-gray-900 hover:bg-gray-100">
+            <Link
+              to="/"
+              className="flex-1 flex items-center justify-center py-3 text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-700"
+            >
               <FontAwesomeIcon icon={faHome} size="lg" />
             </Link>
-            <Link to="/projects" className="flex-1 flex items-center justify-center text-gray-700 hover:text-gray-900 hover:bg-gray-100">
+            <Link
+              to="/projects"
+              className="flex-1 flex items-center justify-center text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-700"
+            >
               <FontAwesomeIcon icon={faLaptopCode} size="lg" />
             </Link>
-            <Link to="/blog" className="flex-1 flex items-center justify-center text-gray-700 hover:text-gray-900 hover:bg-gray-100">
+            <Link
+              to="/blog"
+              className="flex-1 flex items-center justify-center text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-700"
+            >
               <FontAwesomeIcon icon={faBook} size="lg" />
             </Link>
-            <Link to="/contact" className="flex-1 flex items-center justify-center text-gray-700 hover:text-gray-900 hover:bg-gray-100">
+            <Link
+              to="/contact"
+              className="flex-1 flex items-center justify-center text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-700"
+            >
               <FontAwesomeIcon icon={faEnvelope} size="lg" />
             </Link>
           </div>
