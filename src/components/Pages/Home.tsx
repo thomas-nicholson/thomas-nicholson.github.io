@@ -5,7 +5,7 @@ const Home: React.FC = () => (
     <div className="max-w-4xl mx-auto p-8">
       <div className="text-center mb-16">
         <h1 className="text-5xl font-bold text-gray-800 dark:text-gray-100 mb-4">
-          Thomas Nicholson
+          Thomas
         </h1>
         <p className="text-xl text-gray-600 dark:text-gray-300">Full-Stack Software Engineer</p>
       </div>
