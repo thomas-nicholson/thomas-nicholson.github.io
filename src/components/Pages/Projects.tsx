@@ -227,7 +227,7 @@ const Projects: React.FC = () => {
                   <span className="text-sm text-gray-500">{project.year}</span>
                 </div>
                 <p className="text-gray-600 dark:text-gray-300 mb-4 text-sm">{project.description}</p>
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-2 mb-4">
                   {project.tech.map((tech, i) => (
                     <span
                       key={i}
@@ -236,6 +236,28 @@ const Projects: React.FC = () => {
                       {tech}
                     </span>
                   ))}
+                </div>
+                <div className="flex gap-4">
+                  <a
+                    href="#"
+                    className="text-gray-400 cursor-not-allowed text-sm"
+                    onClick={(e) => e.preventDefault()}
+                  >
+                    GitHub
+                  </a>
+                  <a
+                    href="#"
+                    className="text-gray-400 cursor-not-allowed text-sm"
+                    onClick={(e) => e.preventDefault()}
+                  >
+                    Live Demo
+                  </a>
+                  <Link
+                    to={`/blog/${project.title.toLowerCase().replace(/\s+/g, "-")}-project`}
+                    className="text-blue-600 hover:text-blue-800 text-sm"
+                  >
+                    Read More
+                  </Link>
                 </div>
               </div>
             </div>
