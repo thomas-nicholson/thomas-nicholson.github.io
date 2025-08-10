@@ -182,6 +182,67 @@ const Projects: React.FC = () => {
         </div>
 
         <h2 className="text-3xl font-bold text-gray-800 dark:text-gray-100 mb-8 mt-16 text-center">
+          Mobile App Projects
+        </h2>
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+          {[
+            {
+              title: "TaskFlow Mobile",
+              description: "A productivity app with gesture-based navigation and offline sync capabilities.",
+              tech: ["React Native", "TypeScript", "SQLite", "Redux"],
+              year: "2023"
+            },
+            {
+              title: "WeatherNow",
+              description: "Real-time weather app with location-based forecasts and severe weather alerts.",
+              tech: ["Flutter", "Dart", "Firebase", "Maps API"],
+              year: "2022"
+            }
+          ].map((project, index) => (
+            <div
+              key={project.title}
+              className="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden"
+            >
+              <div className="relative">
+                <div 
+                  className="w-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center"
+                  style={{ aspectRatio: '9/16' }}
+                >
+                  <div className="text-center">
+                    <div className="text-4xl mb-2">📱</div>
+                    <span className="text-gray-500 text-sm">Mobile Screenshot</span>
+                  </div>
+                </div>
+                <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+                  <span className="text-white text-lg font-bold transform -rotate-12">
+                    Placeholder
+                  </span>
+                </div>
+              </div>
+              <div className="p-6">
+                <div className="flex justify-between items-center mb-2">
+                  <h2 className="text-xl font-bold text-gray-800 dark:text-gray-100">
+                    {project.title}
+                  </h2>
+                  <span className="text-sm text-gray-500">{project.year}</span>
+                </div>
+                <p className="text-gray-600 dark:text-gray-300 mb-4 text-sm">{project.description}</p>
+                <div className="flex flex-wrap gap-2">
+                  {project.tech.map((tech, i) => (
+                    <span
+                      key={i}
+                      className="px-2 py-1 bg-gray-100 text-gray-600 dark:text-gray-300 rounded-full text-xs"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <h2 className="text-3xl font-bold text-gray-800 dark:text-gray-100 mb-8 mt-16 text-center">
           Archived Projects
         </h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
