@@ -19,6 +19,16 @@ const posts: BlogPost[] = [
     title: "Developing an AI Chat Interface",
     slug: "ai-chat-project",
     content: "# AI Chat Interface\n\nBuilding a modern chat interface powered by machine learning algorithms using Python, TensorFlow, React, and FastAPI."
+  },
+  {
+    title: "[WIP] The Renewal",
+    slug: "the-renewal",
+    content: "# The Renewal\n\nContent coming soon..."
+  },
+  {
+    title: "[WIP] The Blueprint",
+    slug: "the-blueprint",
+    content: "# The Blueprint\n\nContent coming soon..."
   }
 ];
 
