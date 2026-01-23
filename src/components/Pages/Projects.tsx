@@ -10,6 +10,8 @@ interface Project {
   tech: string[];
   github?: string;
   demo?: string;
+  appStoreUrl?: string;
+  playStoreUrl?: string;
   blogSlug?: string;
   status: ProjectStatus;
 }
@@ -59,6 +61,31 @@ const Projects: React.FC = () => {
       tech: ["Python", "TensorFlow", "React", "FastAPI"],
       blogSlug: "ai-chat-project",
       status: "placeholder",
+    },
+  ];
+
+  const mobileProjects: Project[] = [
+    {
+      title: "Pocket Planner",
+      description:
+        "A lightweight daily planner focused on quick capture and gentle reminders.",
+      image: "/pocket-planner.png",
+      tech: ["React Native", "TypeScript", "Expo"],
+      github: "https://github.com/thomas-nicholson/pocket-planner",
+      demo: "https://pocket-planner.app",
+      appStoreUrl: "https://apps.apple.com",
+      playStoreUrl: "https://play.google.com",
+      status: "live",
+    },
+    {
+      title: "TrailBuddy",
+      description:
+        "Offline-first trail notes and waypoint tracking for weekend hikes.",
+      image: "/trailbuddy.png",
+      tech: ["Flutter", "Dart", "Firebase"],
+      github: "https://github.com/thomas-nicholson/trailbuddy",
+      appStoreUrl: "https://apps.apple.com",
+      status: "wip",
     },
   ];
 
@@ -180,6 +207,130 @@ const Projects: React.FC = () => {
                       </Link>
                     ) : null}
                   </div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+
+        <h2 className="text-3xl font-bold text-gray-800 dark:text-gray-100 mb-8 mt-16 text-center">
+          Mobile Apps
+        </h2>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {mobileProjects.map((project) => {
+            const statusLabel = statusLabels[project.status];
+            const hasGithub = Boolean(project.github);
+            const hasDemo = Boolean(project.demo);
+            const hasStoreLinks =
+              Boolean(project.appStoreUrl) || Boolean(project.playStoreUrl);
+
+            return (
+              <div
+                key={project.title}
+                className="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden relative group"
+              >
+                <div className="relative">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-56 object-cover"
+                  />
+                  {statusLabel && (
+                    <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+                      <span className="text-white text-xl font-bold transform -rotate-12">
+                        {statusLabel}
+                      </span>
+                    </div>
+                  )}
+                </div>
+                <div className="p-6">
+                  <h3 className="text-2xl font-bold text-gray-800 dark:text-gray-100 mb-2">
+                    {project.title}
+                  </h3>
+                  <p className="text-gray-600 dark:text-gray-300 mb-4">
+                    {project.description}
+                  </p>
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {project.tech.map((tech) => (
+                      <span
+                        key={tech}
+                        className="px-3 py-1 bg-gray-100 text-gray-600 dark:bg-gray-700 dark:text-gray-100 rounded-full text-sm"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                  <div className="flex gap-4">
+                    {hasGithub ? (
+                      <a
+                        href={project.github}
+                        className="text-blue-600 hover:text-blue-800"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        GitHub
+                      </a>
+                    ) : (
+                      <span className="text-gray-400 cursor-not-allowed">GitHub</span>
+                    )}
+                    {hasDemo ? (
+                      <a
+                        href={project.demo}
+                        className="text-blue-600 hover:text-blue-800"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Live Demo
+                      </a>
+                    ) : (
+                      <span className="text-gray-400 cursor-not-allowed">Live Demo</span>
+                    )}
+                    {project.blogSlug ? (
+                      <Link
+                        to={`/blog/${project.blogSlug}`}
+                        className="text-blue-600 hover:text-blue-800"
+                      >
+                        Read More
+                      </Link>
+                    ) : null}
+                  </div>
+                  {hasStoreLinks ? (
+                    <div className="mt-5">
+                      <p className="text-sm font-semibold text-gray-700 dark:text-gray-200 mb-2">
+                        Get the app
+                      </p>
+                      <div className="flex flex-wrap gap-3">
+                        {project.appStoreUrl ? (
+                          <a
+                            href={project.appStoreUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            <img
+                              src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
+                              alt="Download on the App Store"
+                              className="h-10 w-auto"
+                              loading="lazy"
+                            />
+                          </a>
+                        ) : null}
+                        {project.playStoreUrl ? (
+                          <a
+                            href={project.playStoreUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            <img
+                              src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png"
+                              alt="Get it on Google Play"
+                              className="h-10 w-auto"
+                              loading="lazy"
+                            />
+                          </a>
+                        ) : null}
+                      </div>
+                    </div>
+                  ) : null}
                 </div>
               </div>
             );
