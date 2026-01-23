@@ -140,7 +140,7 @@ const Projects: React.FC = () => {
                     {project.tech.map((tech) => (
                       <span
                         key={tech}
-                        className="px-3 py-1 bg-gray-100 text-gray-600 dark:text-gray-300 rounded-full text-sm"
+                        className="px-3 py-1 bg-gray-100 text-gray-600 dark:bg-gray-700 dark:text-gray-100 rounded-full text-sm"
                       >
                         {tech}
                       </span>
@@ -216,7 +216,7 @@ const Projects: React.FC = () => {
                   {project.tech.map((tech) => (
                     <span
                       key={tech}
-                      className="px-3 py-1 bg-gray-100 text-gray-600 dark:text-gray-300 rounded-full text-sm"
+                      className="px-3 py-1 bg-gray-100 text-gray-600 dark:bg-gray-700 dark:text-gray-100 rounded-full text-sm"
                     >
                       {tech}
                     </span>
