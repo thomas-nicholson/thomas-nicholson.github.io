@@ -1,10 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 
 const Contact: React.FC = () => {
   const emailAddress = "tj@teejay.dev";
+  /*
   const [form, setForm] = useState({ name: "", email: "", message: "" });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { name, value } = e.target;
     setForm((prev) => ({ ...prev, [name]: value }));
   };
@@ -17,6 +20,7 @@ const Contact: React.FC = () => {
     );
     window.location.href = `mailto:${emailAddress}?subject=${subject}&body=${body}`;
   };
+  */
 
   return (
     <div className="min-h-screen py-12 dark:bg-gray-900 dark:text-gray-100">
@@ -80,6 +84,7 @@ const Contact: React.FC = () => {
               </div>
             </div>
           </div>
+          {/*
           <form onSubmit={handleSubmit} className="space-y-4 mt-8">
             <div>
               <label htmlFor="name" className="block mb-1 font-semibold">
@@ -130,6 +135,7 @@ const Contact: React.FC = () => {
               Send
             </button>
           </form>
+          */}
         </div>
       </div>
     </div>
