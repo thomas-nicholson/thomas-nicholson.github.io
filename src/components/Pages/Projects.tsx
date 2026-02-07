@@ -354,7 +354,7 @@ const Projects: React.FC = () => {
               tech: ["Flutter", "Dart", "Firebase", "Maps API"],
               year: "2022"
             }
-          ].map((project, index) => (
+          ].map((project) => (
             <div
               key={project.title}
               className="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden"

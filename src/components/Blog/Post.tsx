@@ -6,7 +6,6 @@ import posts from "./content";
 const Post: React.FC = () => {
   const params = useParams() as { slug: string };
   const { slug } = params;
-  const navigate = useNavigate();
   const post = posts.find((p) => p.slug === slug);
 
   return (
