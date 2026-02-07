@@ -8,12 +8,14 @@ const posts: BlogPost[] = [
   {
     title: "Building Deja Do: A Time-Based Todo App",
     slug: "deja-do-project",
-    content: "# Building Deja Do\n\nA detailed look at how I built a todo list app where lists reset hourly or daily using React, TypeScript, and Tailwind CSS."
+    content:
+      "A detailed look at how I built a todo list app where lists reset hourly or daily using React, TypeScript, and Tailwind CSS.",
   },
   {
     title: "Creating Money Talks: Real-Time Task Management",
     slug: "money-talks-project",
-    content: "# Money Talks Project\n\nExploring the development of a real-time task management system with team collaboration features using TypeScript, Next.js, PostgreSQL, and Socket.io."
+    content:
+      "Exploring the development of a real-time task management system with team collaboration features using TypeScript, Next.js, PostgreSQL, and Socket.io.",
   },
   {
     title: "Developing an AI Chat Interface",

@@ -1,17 +1,27 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import posts, { BlogPost } from './content';
-
+import React from "react";
+import { Link } from "react-router-dom";
+import posts, { BlogPost } from "./content";
 
 const Blog: React.FC = () => (
-  <div className="p-4">
-    {posts.map((post: BlogPost) => (
-      <div key={post.slug} className="mb-4">
-        <Link to={`/blog/${post.slug}`} className="text-gray-900 dark:text-gray-100 hover:text-blue-600 dark:hover:text-blue-400">
-          {post.title}
-        </Link>
+  <div className="min-h-screen py-12 dark:bg-gray-900 dark:text-gray-100">
+    <div className="max-w-4xl mx-auto px-4">
+      <h1 className="text-4xl font-bold text-gray-800 dark:text-gray-100 mb-8 text-center">
+        Blog
+      </h1>
+      <div className="space-y-4">
+        {posts.map((post: BlogPost) => (
+          <Link
+            key={post.slug}
+            to={`/blog/${post.slug}`}
+            className="block bg-white dark:bg-gray-800 rounded-lg shadow p-4 hover:shadow-md transition-shadow"
+          >
+            <h2 className="text-xl font-semibold text-gray-800 dark:text-gray-100">
+              {post.title}
+            </h2>
+          </Link>
+        ))}
       </div>
-    ))}
+    </div>
   </div>
 );
 
