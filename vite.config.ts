@@ -5,9 +5,16 @@ export default defineConfig({
   plugins: [react()],
   server: {
     host: "0.0.0.0",
+    port: 5000,
+    strictPort: true,
     allowedHosts: [
-      "55e398dd-c42b-4c13-bfc8-ff12fa07ae0f-00-2r8193un22sci.sisko.repl.co",
-      "55e398dd-c42b-4c13-bfc8-ff12fa07ae0f-00-2r8193un22sci.sisko.replit.dev"
+      '.replit.dev',
+      '.repl.co',
+      'localhost'
     ],
+  },
+  preview: {
+    port: 5000,
+    host: "0.0.0.0",
   },
 });
