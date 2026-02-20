@@ -1,7 +1,7 @@
 import React from "react";
 
 const Home: React.FC = () => (
-  <div className="min-h-screen dark:bg-gray-900 dark:text-gray-100">
+  <div className="dark:bg-gray-900 dark:text-gray-100">
     <div className="max-w-4xl mx-auto p-8">
       <div className="text-center mb-16">
         <h1 className="text-5xl font-bold text-gray-800 dark:text-gray-100 mb-4">

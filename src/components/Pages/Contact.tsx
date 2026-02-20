@@ -23,7 +23,7 @@ const Contact: React.FC = () => {
   */
 
   return (
-    <div className="min-h-screen py-12 dark:bg-gray-900 dark:text-gray-100">
+    <div className="py-12 dark:bg-gray-900 dark:text-gray-100">
       <div className="max-w-4xl mx-auto px-4">
         <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8">
           <h1 className="text-4xl font-bold text-gray-800 dark:text-gray-100 mb-8 text-center">
@@ -36,7 +36,9 @@ const Contact: React.FC = () => {
             </h2>
             <div className="space-y-6">
               <div>
-                <h3 className="font-semibold text-gray-700 mb-2">Email</h3>
+                <h3 className="font-semibold text-gray-700 dark:text-gray-200 mb-2">
+                  Email
+                </h3>
                 <a
                   href={`mailto:${emailAddress}`}
                   className="text-blue-600 hover:text-blue-800"
@@ -45,7 +47,9 @@ const Contact: React.FC = () => {
                 </a>
               </div>
               <div>
-                <h3 className="font-semibold text-gray-700 mb-2">LinkedIn</h3>
+                <h3 className="font-semibold text-gray-700 dark:text-gray-200 mb-2">
+                  LinkedIn
+                </h3>
                 <a
                   href="https://www.linkedin.com/in/thomas-nicholson-039534146/"
                   className="text-blue-600 hover:text-blue-800"
@@ -64,7 +68,9 @@ const Contact: React.FC = () => {
                 </a>
               </div>
               <div>
-                <h3 className="font-semibold text-gray-700 mb-2">GitHub</h3>
+                <h3 className="font-semibold text-gray-700 dark:text-gray-200 mb-2">
+                  GitHub
+                </h3>
                 <a
                   href="https://github.com/thomas-nicholson"
                   className="text-blue-600 hover:text-blue-800"

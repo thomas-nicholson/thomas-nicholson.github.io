@@ -69,7 +69,8 @@ const Projects: React.FC = () => {
       title: "Pocket Planner",
       description:
         "A lightweight daily planner focused on quick capture and gentle reminders.",
-      image: "/pocket-planner.png",
+      image:
+        "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80",
       tech: ["React Native", "TypeScript", "Expo"],
       github: "https://github.com/thomas-nicholson/pocket-planner",
       demo: "https://pocket-planner.app",
@@ -81,7 +82,8 @@ const Projects: React.FC = () => {
       title: "TrailBuddy",
       description:
         "Offline-first trail notes and waypoint tracking for weekend hikes.",
-      image: "/trailbuddy.png",
+      image:
+        "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=80",
       tech: ["Flutter", "Dart", "Firebase"],
       github: "https://github.com/thomas-nicholson/trailbuddy",
       appStoreUrl: "https://apps.apple.com",
@@ -108,7 +110,7 @@ const Projects: React.FC = () => {
   ];
 
   return (
-    <div className="min-h-screen py-12 dark:bg-gray-900 dark:text-gray-100">
+    <div className="py-12 dark:bg-gray-900 dark:text-gray-100">
       <div className="max-w-6xl mx-auto px-4">
         <h1 className="text-4xl font-bold text-gray-800 dark:text-gray-100 mb-8 text-center">
           Projects
@@ -142,7 +144,9 @@ const Projects: React.FC = () => {
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-48 object-cover"
+                    className="w-full aspect-[16/9] object-cover"
+                    loading="lazy"
+                    decoding="async"
                   />
                   {/* <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2 w-8 h-6 flex flex-col gap-1 bg-white rounded-full shadow-md opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none p-1">
                   <div className="h-0.5 w-full bg-gray-400 rounded"></div>
@@ -233,7 +237,9 @@ const Projects: React.FC = () => {
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-56 object-cover"
+                    className="w-full aspect-[16/9] object-cover"
+                    loading="lazy"
+                    decoding="async"
                   />
                   {statusLabel && (
                     <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
@@ -350,7 +356,9 @@ const Projects: React.FC = () => {
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-48 object-cover"
+                  className="w-full aspect-[16/9] object-cover"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
               <div className="p-6">

@@ -9,7 +9,7 @@ const Post: React.FC = () => {
   const post = posts.find((p) => p.slug === slug);
 
   return (
-    <div className="min-h-screen py-12 dark:bg-gray-900 dark:text-gray-100">
+    <div className="py-12 dark:bg-gray-900 dark:text-gray-100">
       <div className="max-w-4xl mx-auto px-4">
         {post ? (
           <div className="prose prose-lg dark:prose-invert">

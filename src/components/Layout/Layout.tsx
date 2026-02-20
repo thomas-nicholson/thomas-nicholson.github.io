@@ -25,6 +25,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         </div>
         <button
           aria-label="Toggle Dark Mode"
+          aria-pressed={theme === 'dark'}
           onClick={toggleTheme}
           className="ml-auto p-2 rounded hover:bg-gray-200 dark:hover:bg-gray-700"
         >
@@ -34,24 +35,28 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
           <div className="flex h-full">
             <Link
               to="/"
+              aria-label="Home"
               className="flex-1 flex items-center justify-center py-3 text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-700"
             >
               <FontAwesomeIcon icon={faHome} size="lg" />
             </Link>
             <Link
               to="/projects"
+              aria-label="Projects"
               className="flex-1 flex items-center justify-center text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-700"
             >
               <FontAwesomeIcon icon={faLaptopCode} size="lg" />
             </Link>
             <Link
               to="/blog"
+              aria-label="Blog"
               className="flex-1 flex items-center justify-center text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-700"
             >
               <FontAwesomeIcon icon={faBook} size="lg" />
             </Link>
             <Link
               to="/contact"
+              aria-label="Contact"
               className="flex-1 flex items-center justify-center text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-700"
             >
               <FontAwesomeIcon icon={faEnvelope} size="lg" />
@@ -59,7 +64,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
           </div>
         </div>
       </nav>
-      <main className="p-4">{children}</main>
+      <main className="p-4 pb-20 lg:pb-4">{children}</main>
     </div>
   );
 };
