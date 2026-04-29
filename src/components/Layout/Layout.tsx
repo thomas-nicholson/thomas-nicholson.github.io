@@ -18,7 +18,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         <div className="hidden lg:flex lg:items-center lg:w-auto">
           <div className="text-sm lg:flex-grow">
             <Link to="/" className="lg:inline-block lg:mt-0 px-4 py-2 hover:underline">Home</Link>
-            <Link to="/projects" className="lg:inline-block lg:mt-0 px-4 py-2 hover:underline">Projects</Link>
+            <Link to="/gallery" className="lg:inline-block lg:mt-0 px-4 py-2 hover:underline">Gallery</Link>
             <Link to="/blog" className="lg:inline-block lg:mt-0 px-4 py-2 hover:underline">Blog</Link>
             <Link to="/contact" className="lg:inline-block lg:mt-0 px-4 py-2 hover:underline">Contact</Link>
           </div>
@@ -41,8 +41,8 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
               <FontAwesomeIcon icon={faHome} size="lg" />
             </Link>
             <Link
-              to="/projects"
-              aria-label="Projects"
+              to="/gallery"
+              aria-label="Gallery"
               className="flex-1 flex items-center justify-center text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-700"
             >
               <FontAwesomeIcon icon={faLaptopCode} size="lg" />
